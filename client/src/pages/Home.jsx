@@ -32,12 +32,23 @@ const Home = () => {
 
       <section className="section-analytics">
         <div className="container grid grid-four-cols">
-            <div className="div1">
-                <h2>50+</h2>
-                <p>registerd</p>
-            </div>
+          <div className="div1">
+            <h2>50+</h2>
+            <p>registerd companies</p>
+          </div>
+          <div className="div1">
+            <h2>100,00+</h2>
+            <p>Happy Clients</p>
+          </div>
+          <div className="div1">
+            <h2>500+</h2>
+            <p>well known Developer</p>
+          </div>
+          <div className="div1">
+            <h2>24/7</h2>
+            <p>services</p>
+          </div>
         </div>
-
       </section>
 
       {/* 3rd section  */}
@@ -59,7 +70,7 @@ const Home = () => {
             <p>
               Ready to take the first step towards a more efficient and secure
               IT infrastructure? Contact us today for a free consultation and
-              let's discuss how Thapa Technical can help your business thrive in
+              lets discuss how Thapa Technical can help your business thrive in
               the digital age.
             </p>
             <div className="btn btn-group">
