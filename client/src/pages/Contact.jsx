@@ -23,6 +23,7 @@ const Contact = () => {
   //Handling the form submission
   const handleSubmit = async (e) =>{
     e.preventDefault();
+    console.log(contact);
   }
 
   return (
@@ -71,7 +72,7 @@ const Contact = () => {
                   onChange={handleInput}
                   required
                   cols="30"
-                  rows="10"
+                  rows="6"
                 ></textarea>
               </div>
               <div>
