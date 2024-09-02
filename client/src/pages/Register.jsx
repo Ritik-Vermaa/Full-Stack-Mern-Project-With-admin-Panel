@@ -1,32 +1,40 @@
 import { useState } from "react";
 
 const Register = () => {
-
-  const [user , setUser] = useState({
-    username : "",
-    email : "",
-    phone : "",
-    password : "",
-
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
   });
 
   //Handling the input values
-  const handleInput = (e) =>{
+  const handleInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
 
-    setUser(
-      {
-        ...user,
-        [name] : value,
-      }
-    );
-  }
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
 
   //Handling the form submission
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+    try {
+      await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      alert("Registration Successful");
+    } catch (error) {
+      console.log("register", error);
+    }
+  };
 
   return (
     <>
@@ -98,7 +106,9 @@ const Register = () => {
                       onChange={handleInput}
                     />
                   </div>
-                  <button type="submit" className="btn btn-submit" >Register Now</button>
+                  <button type="submit" className="btn btn-submit">
+                    Register Now
+                  </button>
                 </form>
               </div>
             </div>

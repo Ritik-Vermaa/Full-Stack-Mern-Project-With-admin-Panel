@@ -5,11 +5,22 @@ const contactroute = require('./router/contact.router');
 const connectDB = require('./utils/Db');
 const dotenv = require('dotenv');
 const errorMiddleware = require('./middlewares/error.middleware');
+const cors = require('cors');
 
 //Environment variables
 dotenv.config({ 
     path: './.env'
 });
+
+const corsOption = {
+    origin: "http://localhost:5173",
+    optionsSuccessStatus: 200,
+    methods: "GET, POST, PUT, DELETE",
+    credentials: true,
+}
+
+//Cors
+app.use(cors(corsOption));
 
 //Middlewares
 app.use(express.json({
